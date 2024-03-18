@@ -4,16 +4,14 @@
 
 class IMateriaSource
 {
+	protected:
+		std::string	type_;
 	public:
 		IMateriaSource();
 		IMateriaSource(std::string const &type);
 		IMateriaSource(const IMateriaSource &other);
 		IMateriaSource	&operator=(const IMateriaSource &other);
-		~IMateriaSource();
-		// virtual std::string const & getName() const = 0;
-		// virtual void equip(AMateria* m) = 0;
-		// virtual void unequip(int idx) = 0;
-		// virtual void use(int idx, ICharacter& target) = 0;
-		void	learnMateria(AMateria*);
-		createMateria(std::string const &);
+		virtual ~IMateriaSource();
+		virtual void		learnMateria(AMateria*) = 0;
+		virtual AMateria	*createMateria(std::string const & type) = 0;
 };

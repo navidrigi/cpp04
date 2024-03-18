@@ -1,11 +1,10 @@
 #include "Character.hpp"
 
-Character::Character()
-{
-}
+Character::Character() {}
 
-Character::Character(std::string const &type)
+Character::Character(std::string const &name)
 {
+	name_ = name;
 }
 
 Character::Character(const Character &other)
@@ -20,18 +19,15 @@ Character	&Character::operator=(const Character &other)
 	return *this;
 }
 
-Character::~Character()
+Character::~Character() {}
+
+std::string const	&Character::getName() const
 {
+	return name_;
 }
 
-std::string const	&Character::getType() const; //Returns the materia type
+void	Character::equip(AMateria *m);
 
-Character	*Character::clone() const;
+void	Character::unequip(int idx);
 
-void	Character::use(ICharacter &target)
-{
-	std::cout << "* shoots an ice bolt at "
-			  << target
-			  << " *"
-			  << std::endl;
-}
+void	Character::use(int idx, ICharacter &target);

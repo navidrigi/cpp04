@@ -4,6 +4,8 @@
 
 class ICharacter
 {
+	protected:
+		std::string	name_;
 	public:
 		ICharacter();
 		// ICharacter(std::string const & type);
