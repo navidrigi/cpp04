@@ -2,20 +2,12 @@
 
 Cure::Cure() : AMateria("cure") {}
 
-Cure::Cure(std::string const &type)
-{
-	type_ = type;
-}
-
-Cure::Cure(const Cure &other)
-{
-	*this = other;
-}
+Cure::Cure(const Cure &other) : AMateria(other) {}
 
 Cure	&Cure::operator=(const Cure &other)
 {
 	if (this != &other)
-		*this = other;
+		AMateria::operator=(other);
 	return *this;
 }
 

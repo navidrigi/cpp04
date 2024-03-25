@@ -2,20 +2,14 @@
 
 AMateria::AMateria() {}
 
-AMateria::AMateria(std::string const &type)
-{
-	type_ = type;
-}
+AMateria::AMateria(std::string const &type) : type_(type) {}
 
-AMateria::AMateria(const AMateria &other)
-{
-	*this = other;
-}
+AMateria::AMateria(const AMateria &other) : type_(other.type_) {}
 
 AMateria	&AMateria::operator=(const AMateria &other)
 {
 	if (this != &other)
-		*this = other;
+		type_ = other.type_;
 	return *this;
 }
 

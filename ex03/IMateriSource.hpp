@@ -4,14 +4,10 @@
 
 class IMateriaSource
 {
-	protected:
-		std::string	type_;
 	public:
-		IMateriaSource();
-		IMateriaSource(std::string const &type);
-		IMateriaSource(const IMateriaSource &other);
-		IMateriaSource	&operator=(const IMateriaSource &other);
-		virtual ~IMateriaSource();
+		virtual ~IMateriaSource() {}
 		virtual void		learnMateria(AMateria*) = 0;
 		virtual AMateria	*createMateria(std::string const & type) = 0;
 };
+
+// pure abstract class(interface) because all member functions are pure virtual

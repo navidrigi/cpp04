@@ -2,20 +2,12 @@
 
 Ice::Ice() : AMateria("ice") {}
 
-Ice::Ice(std::string const &type)
-{
-	type_ = type;
-}
-
-Ice::Ice(const Ice &other)
-{
-	*this = other;
-}
+Ice::Ice(const Ice &other) : AMateria(other) {}
 
 Ice	&Ice::operator=(const Ice &other)
 {
 	if (this != &other)
-		*this = other;
+		AMateria::operator=(other);
 	return *this;
 }
 
